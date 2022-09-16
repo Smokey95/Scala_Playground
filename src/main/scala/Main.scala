@@ -2,5 +2,6 @@
   println(line)
   println(printTest)
   println(line)
-  println(mesh)
+  println(output)
+  println(line)
 }
