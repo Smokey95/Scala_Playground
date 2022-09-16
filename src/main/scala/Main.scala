@@ -1,7 +1,7 @@
 @main def main: Unit = {
-  println(line)
+  println(line())
   println(printTest)
-  println(line)
+  println(line())
   println(output)
-  println(line)
+  println(line())
 }

@@ -1,8 +1,9 @@
 private val msg = "I was compiled by Scala 3.! :)"
-
-private val helloWorld = "Hello World"
+val helloWorld = "Hello World!"
 
 val eol = sys.props("line.separator")
-val line = "-" * 80
+
+/* Line for separation */
+def line(length: Int = 80) = "-" * length
 
 def printTest = helloWorld + eol + msg
