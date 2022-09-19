@@ -1,3 +1,5 @@
+package utility
+
 private val msg = "I was compiled by Scala 3.! :)"
 val helloWorld = "Hello World!"
 

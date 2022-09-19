@@ -1,12 +1,14 @@
-package model
+package tictactoe.model
 
 case class Matrix[T](rows: Vector[Vector[T]]):
     
+    /* Auxiliary constructor */
     def this(size: Int, filling: T) =
     {
         this(Vector.tabulate(size, size) { (row, col) => filling})
     }
     
+    /* Matrix size */
     val size: Int = rows.size
     
     def cell(row: Int, col: Int): T = 
@@ -14,6 +16,12 @@ case class Matrix[T](rows: Vector[Vector[T]]):
         rows(row)(col)
     }
     
+    def row(row: Int) =
+    {
+        rows(row)
+    }
+    
+    /* Method to fill a complete matrix with value T */
     def fill(filling: T): Matrix[T] =
     {
         copy(Vector.tabulate(3, 3) { (row, col) => filling})
@@ -23,3 +31,4 @@ case class Matrix[T](rows: Vector[Vector[T]]):
     {
         copy(rows.updated(row, rows(row).updated(col, cell)))
     }
+    
