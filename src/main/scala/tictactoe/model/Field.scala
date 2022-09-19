@@ -20,9 +20,14 @@ case class Field(matrix: Matrix[Stone]):
     (plus + (minus * cellWidth)) * cellCount + plus + eol
   }
   
-  def cells(cellWidth: Int = 3, cellCount: Int = 3) = 
+  /* Old cell function */
+  //def cells(cellWidth: Int = 3, cellCount: Int = 3) = 
+  //{
+  //  (verLine + (space * cellWidth)) * cellCount + verLine + eol
+  //}
+  def cells(row: Int, cellWidth: Int = 3) =
   {
-    (verLine + (space * cellWidth)) * cellCount + verLine + eol
+    matrix.row(row).map(_.toString).map(" " * ((cellWidth - 1) / 2) + _ + " " * ((cellWidth - 1) / 2)).mkString(verLine, verLine, verLine) + eol
   }
   
   /* Old mesh function */
