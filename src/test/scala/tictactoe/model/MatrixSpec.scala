@@ -24,6 +24,9 @@ class MatrixSpec extends AnyWordSpec{
         matrix.cell(0,1) should be("x")
         matrix.cell(1,1) should be("x")
       }
+      "give access to its rows" in {
+        matrix.row(0) should be(Vector("x", "x"))
+      }
       "replace cells and returns a new data structure" in {
         val returnedMatrix = matrix.replaceCell(0, 0, "o")
         matrix.cell(0, 0) should be("x")
