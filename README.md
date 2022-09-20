@@ -1,4 +1,7 @@
 ## Scala Playground
+
+[![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org)
+
 Playground for Scala used in the course Software Engineering at HTWG Konstanz
 
 ---
