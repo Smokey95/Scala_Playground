@@ -1,12 +1,12 @@
-package tictactoe
+package tictactoe.model
 
 import org.scalatest.wordspec.AnyWordSpec
 import org.scalatest.matchers.should.Matchers._
 
-class TicTacToeSpec extends AnyWordSpec{
+class StoneSpec extends AnyWordSpec{
   "A Stone" should {
     "be Empty, X or O" in {
-      //var emptyStone = Stone("X")
+      //var emptyStone = new Stone("X")
       //emptyStone.toString() should be(" ")
     }
   }
