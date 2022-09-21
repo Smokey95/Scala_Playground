@@ -1,5 +1,5 @@
 ## Scala Playground
-[![codecov](https://codecov.io/gh/Smokey95/Scala_Playground/branch/TicTacToe/graph/badge.svg?token=NHH95JLC9H)](https://codecov.io/gh/Smokey95/Scala_Playground)
+[![t](https://codecov.io/gh/Smokey95/Scala_Playground/branch/TicTacToe/graph/badge.svg?token=NHH95JLC9H)](https://codecov.io/gh/Smokey95/Scala_Playground)
 
 [![RepoSize](https://img.shields.io/github/repo-size/Smokey95/Scala_Playground?color=green)](https://cdn130.picsart.com/272563229032201.jpg?r1024x1024)
 [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org)
