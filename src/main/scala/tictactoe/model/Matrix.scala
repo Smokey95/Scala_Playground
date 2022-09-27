@@ -1,4 +1,5 @@
-package tictactoe.model
+package TicTacToe
+package model
 
 case class Matrix[T](rows: Vector[Vector[T]]):
     

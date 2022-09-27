@@ -1,4 +1,5 @@
-package tictactoe.model
+package TicTacToe
+package model
 
 import utility.eol                                                              // Import declaration to use eol
 

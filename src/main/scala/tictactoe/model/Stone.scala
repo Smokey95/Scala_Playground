@@ -1,4 +1,5 @@
-package tictactoe.model
+package TicTacToe
+package model
 
 /*
 * Enum declaration for the TicTacToe stones
