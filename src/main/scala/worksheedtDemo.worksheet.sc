@@ -4,7 +4,8 @@ import scala.collection.Stepper
 */
 
 // Simple addition
-1+2 
+1+2
+ 
 
 // Function are also possible
 def f(x: Int) = x + 2
@@ -19,6 +20,10 @@ cells(0)(1)
 
 enum Stone:
     case X, O, Empty
+
+/* Without enum constructor like in Stone.scala the Stone has Empty has the String representation "Empty" */
+val stoneX = Stone.X
+val stoneE = Stone.Empty
     
 case class Matrix(rows: Vector[Vector[Stone]]):
     def cell(row: Int, col: Int) = rows(row)(col)
