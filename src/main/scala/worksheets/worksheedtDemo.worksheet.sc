@@ -1,3 +1,4 @@
+
 import scala.collection.Stepper
 /*
 * Demo of a worksheet in scala. Worksheets can be used to build and directly test project parts.
@@ -35,3 +36,15 @@ m.cell(0, 2)
 val m2 = m.fill(Stone.Empty)
 m2.replaceCell(1, 1, Stone.X)
 m2.cell(1,1)
+
+
+var testVector: Vector[Int] = Vector()
+testVector = testVector.appended(0)
+testVector = testVector.appended(1)
+testVector = testVector.appended(2)
+testVector = testVector.appended(10)
+testVector = testVector.appended(20)
+
+testVector
+
+testVector.filter(o => o < 10)
