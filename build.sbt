@@ -4,17 +4,24 @@ lazy val root = project
   .in(file("."))
   .settings(
     name := "scala_playground",
+    
     version := "0.1.0-SNAPSHOT",
+    
     scalaVersion := scala3Version,
-    libraryDependencies += "org.scalameta" %% "munit" % "0.7.29" % Test,
-    libraryDependencies += "org.scalactic" %% "scalactic" % "3.2.10",
-    libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.10" % "test",
+    
+    libraryDependencies ++= { 
+      Seq(
+      "org.scalameta" %% "munit" % "0.7.29" % Test,
+      "org.scalactic" %% "scalactic" % "3.2.10",
+      "org.scalatest" %% "scalatest" % "3.2.10" % "test"
+      )
+    },
 
     jacocoReportSettings := JacocoReportSettings(
       "Jacoco Coverage Report",
       None,
       JacocoThresholds(),
-      Seq(JacocoReportFormats.ScalaHTML, JacocoReportFormats.XML), // note XML formatter
+      Seq(JacocoReportFormats.ScalaHTML, JacocoReportFormats.XML),
     "utf-8"),
     
     jacocoExcludes := Seq(
