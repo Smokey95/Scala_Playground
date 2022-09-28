@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ master, develop ]
 
+permissions:
+  contents: read
+  
 jobs:
   build:
 
@@ -18,6 +21,10 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
+      - name: Setup
+        run:
+          sudo -i
+          apt install curl -y
       - name: Run tests
         run:
           sbt clean test jacoco
@@ -26,15 +33,3 @@ jobs:
           curl -s https://codecov.io/bash > .codecov
           chmod +x .codecov
           bash .codecov
-          
-    run_tests:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Build Project and export Coverage
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
-        run: |
-          export CI_BRANCH="${GITHUB_REF#refs/heads/}"
-          sbt clean jacoco jacocoCoveralls 
