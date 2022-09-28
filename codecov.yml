@@ -1,7 +1,0 @@
-ignore:
-
-coverage:
-  status:
-    patch:
-      default:
-        target: 75%
