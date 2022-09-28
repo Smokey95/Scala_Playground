@@ -27,3 +27,5 @@ lazy val root = project
       
    )
   .enablePlugins(JacocoCoverallsPlugin)
+  
+  
