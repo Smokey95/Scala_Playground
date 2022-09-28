@@ -19,7 +19,7 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
     - name: Setup
-        run:
+        run: |
           sudo -i
           apt install curl -y
       - name: Run tests
