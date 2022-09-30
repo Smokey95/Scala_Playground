@@ -20,8 +20,12 @@ lazy val root = project
     
     jacocoExcludes := Seq(
       "Main*",
+      "*Main",
       "src.main.scala.Main",
-      "src.main.scala.Utility"
+      "src.main.scala.Main*",
+      "src.main.scala.Utility",
+      "src.main.scala.tictactpe._",
+      "src.main.scala.tictactpe.*",
     ),
     
     jacocoReportSettings := JacocoReportSettings(
