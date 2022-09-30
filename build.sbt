@@ -18,14 +18,6 @@ lazy val root = project
       )
     },
     
-    jacocoReportSettings in Test := JacocoReportSettings(
-      "Jacoco Coverage Report",
-      None,
-      JacocoThresholds(),
-      Seq(JacocoReportFormats.ScalaHTML, JacocoReportFormats.XML),
-      "utf-8"
-    ),
-    
     jacocoExcludes in Test := Seq(
       "Main*",
       "Utility*",
