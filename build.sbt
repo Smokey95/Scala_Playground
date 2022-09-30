@@ -3,7 +3,8 @@ val scalaTestVersion = "3.2.10"
 
 lazy val excludes = jacocoExcludes in Test :=Seq(
   "src/main/scala/Main*",
-  "src.main.scala.Main*"
+  "src.main.scala.Main*",
+  "src/main/scala/Main.scala"
 )
 
 lazy val jacoco = jacocoReportSettings in Test :=JacocoReportSettings(
@@ -13,6 +14,8 @@ lazy val jacoco = jacocoReportSettings in Test :=JacocoReportSettings(
   Seq(JacocoReportFormats.ScalaHTML, JacocoReportFormats.XML),
   "utf-8"
 )
+
+val jacocoSettings = Seq(jacoco, excludes)
 
 lazy val root = project
   .in(file("."))
@@ -31,10 +34,7 @@ lazy val root = project
       )
     },
     
-    jacoco,
-    
-    excludes
-    
+    jacocoSettings: _*
       
    )
   .enablePlugins(JacocoCoverallsPlugin)
