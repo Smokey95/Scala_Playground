@@ -15,8 +15,6 @@ lazy val jacoco = jacocoReportSettings in Test :=JacocoReportSettings(
   "utf-8"
 )
 
-val jacocoSettings = Seq(jacoco, excludes)
-
 lazy val root = project
   .in(file("."))
   .settings(
@@ -34,7 +32,7 @@ lazy val root = project
       )
     },
     
-    jacocoSettings: _*
+    jacoco, excludes
       
    )
   .enablePlugins(JacocoCoverallsPlugin)
