@@ -26,6 +26,7 @@ lazy val root = project
       "src.main.scala.Utility",
       "src.main.scala.tictactpe._",
       "src.main.scala.tictactpe.*",
+      "src/main/scala/Main.scala"
     ),
     
     jacocoReportSettings := JacocoReportSettings(
