@@ -16,13 +16,7 @@ lazy val root = project
       "org.scalactic" %% "scalactic" % scalaTestVersion,
       "org.scalatest" %% "scalatest" % scalaTestVersion % "test"
       )
-    },
-    
-    jacocoExcludes in Test := Seq(
-      "Main*",
-      "Utility*",
-      "tictactoe.*"
-    )
+    }
       
    )
   .enablePlugins(JacocoCoverallsPlugin)
