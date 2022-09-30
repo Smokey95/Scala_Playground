@@ -1,20 +1,6 @@
 val scala3Version = "3.1.2"
 val scalaTestVersion = "3.2.10"
 
-lazy val excludes = jacocoExcludes in Test :=Seq(
-  "Main*",
-  "Utility*",
-  "tictactoe.*"
-)
-
-lazy val jacoco = jacocoReportSettings in Test :=JacocoReportSettings(
-  "Jacoco Coverage Report",
-  None,
-  JacocoThresholds(),
-  Seq(JacocoReportFormats.ScalaHTML, JacocoReportFormats.XML),
-  "utf-8"
-)
-
 lazy val root = project
   .in(file("."))
   .settings(
@@ -32,7 +18,19 @@ lazy val root = project
       )
     },
     
-    jacoco, excludes
+    jacocoReportSettings in Test := JacocoReportSettings(
+      "Jacoco Coverage Report",
+      None,
+      JacocoThresholds(),
+      Seq(JacocoReportFormats.ScalaHTML, JacocoReportFormats.XML),
+      "utf-8"
+    ),
+    
+    jacocoExcludes in Test := Seq(
+      "Main*",
+      "Utility*",
+      "tictactoe.*"
+    )
       
    )
   .enablePlugins(JacocoCoverallsPlugin)
