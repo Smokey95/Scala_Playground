@@ -5,8 +5,9 @@ trait Observer:
   def update:Unit
  
   
-trait Observable:
+class Observable:
   var subScribers: Vector[Observer] = Vector()
+  
   def add(s:Observer) = {
     subScribers = subScribers.appended(s)
   }

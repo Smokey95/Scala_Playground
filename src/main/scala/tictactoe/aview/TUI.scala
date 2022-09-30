@@ -6,7 +6,7 @@ import model.Stone
 import util.Observer
 import scala.io.StdIn.readLine
 
-class TUI(controller: Controller) extends Observer:
+class TUI(var controller: Controller) extends Observer:
   controller.add(this)
   
   def run = {
