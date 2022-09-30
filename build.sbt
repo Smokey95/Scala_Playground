@@ -18,12 +18,13 @@ lazy val root = project
       )
     },
     
-    jacocoExcludes := Seq(
-      "Main*",
-      "Utility*",
-      "tictactoe.TicTacToe*",
-      "tictactoe.aview.*"
-    )  
+    jacocoReportSettings := JacocoReportSettings(
+      "Jacoco Coverage Report",
+      None,
+      JacocoThresholds(),
+      Seq(JacocoReportFormats.ScalaHTML, JacocoReportFormats.XML),
+      "utf-8")
+      
    )
   .enablePlugins(JacocoCoverallsPlugin)
   
