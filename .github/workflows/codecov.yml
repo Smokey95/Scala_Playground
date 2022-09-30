@@ -2,7 +2,7 @@ name: Scala Codecov
 
 on:
   push:
-    branches: [ jacocoCoverallsBranch ]
+    branches: [ develop, TicTacToe, TicTacToe_CD, TicTacToe_MVC]
   pull_request:
     branches: [ master, develop ]
 
