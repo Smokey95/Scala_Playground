@@ -16,8 +16,14 @@ lazy val root = project
       "org.scalactic" %% "scalactic" % scalaTestVersion,
       "org.scalatest" %% "scalatest" % scalaTestVersion % "test"
       )
-    }
-      
+    },
+    
+    jacocoExcludes := Seq(
+      "Main*",
+      "Utility*",
+      "tictactoe.TicTacToe*",
+      "tictactoe.aview.*"
+    )  
    )
   .enablePlugins(JacocoCoverallsPlugin)
   
