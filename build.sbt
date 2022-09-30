@@ -18,6 +18,14 @@ lazy val root = project
       )
     },
     
+    jacocoReportSettings := JacocoReportSettings(
+      "Jacoco Coverage Report",
+      None,
+      JacocoThresholds(),
+      Seq(JacocoReportFormats.ScalaHTML, JacocoReportFormats.XML),
+      "utf-8",
+      ),
+    
     jacocoExcludes := Seq(
       "Main*",
       "*Main",
@@ -28,13 +36,6 @@ lazy val root = project
       "src.main.scala.tictactpe.*",
       "src/main/scala/Main.scala"
     ),
-    
-    jacocoReportSettings := JacocoReportSettings(
-      "Jacoco Coverage Report",
-      None,
-      JacocoThresholds(),
-      Seq(JacocoReportFormats.ScalaHTML, JacocoReportFormats.XML),
-      "utf-8"),
     
     jacocoCoverallsServiceName := "github-actions", 
     jacocoCoverallsBranch := sys.env.get("CI_BRANCH"),
