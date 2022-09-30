@@ -1,6 +1,19 @@
 val scala3Version = "3.1.2"
 val scalaTestVersion = "3.2.10"
 
+lazy val excludes = jacocoExcludes in Test :=Seq(
+  "src/main/scala/Main*",
+  "src.main.scala.Main*"
+)
+
+lazy val jacoco = jacocoReportSettings in Test :=JacocoReportSettings(
+  "Jacoco Coverage Report",
+  None,
+  JacocoThresholds(),
+  Seq(JacocoReportFormats.ScalaHTML, JacocoReportFormats.XML),
+  "utf-8"
+)
+
 lazy val root = project
   .in(file("."))
   .settings(
@@ -18,29 +31,10 @@ lazy val root = project
       )
     },
     
-    jacocoReportSettings := JacocoReportSettings(
-      "Jacoco Coverage Report",
-      None,
-      JacocoThresholds(),
-      Seq(JacocoReportFormats.ScalaHTML, JacocoReportFormats.XML),
-      "utf-8",
-      ),
+    jacoco,
     
-    jacocoExcludes := Seq(
-      "Main*",
-      "*Main",
-      "src.main.scala.Main",
-      "src.main.scala.Main*",
-      "src.main.scala.Utility",
-      "src.main.scala.tictactpe._",
-      "src.main.scala.tictactpe.*",
-      "src/main/scala/Main.scala"
-    ),
+    excludes
     
-    jacocoCoverallsServiceName := "github-actions", 
-    jacocoCoverallsBranch := sys.env.get("CI_BRANCH"),
-    jacocoCoverallsPullRequest := sys.env.get("GITHUB_EVENT_NAME"),
-    jacocoCoverallsRepoToken := sys.env.get("COVERALLS_REPO_TOKEN")
       
    )
   .enablePlugins(JacocoCoverallsPlugin)
