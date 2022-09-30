@@ -1,10 +1,12 @@
+
 import scala.collection.Stepper
 /*
 * Demo of a worksheet in scala. Worksheets can be used to build and directly test project parts.
 */
 
 // Simple addition
-1+2 
+1+2
+ 
 
 // Function are also possible
 def f(x: Int) = x + 2
@@ -19,6 +21,10 @@ cells(0)(1)
 
 enum Stone:
     case X, O, Empty
+
+/* Without enum constructor like in Stone.scala the Stone has Empty has the String representation "Empty" */
+val stoneX = Stone.X
+val stoneE = Stone.Empty
     
 case class Matrix(rows: Vector[Vector[Stone]]):
     def cell(row: Int, col: Int) = rows(row)(col)
@@ -30,3 +36,15 @@ m.cell(0, 2)
 val m2 = m.fill(Stone.Empty)
 m2.replaceCell(1, 1, Stone.X)
 m2.cell(1,1)
+
+
+var testVector: Vector[Int] = Vector()
+testVector = testVector.appended(0)
+testVector = testVector.appended(1)
+testVector = testVector.appended(2)
+testVector = testVector.appended(10)
+testVector = testVector.appended(20)
+
+testVector
+
+testVector.filter(o => o < 10)

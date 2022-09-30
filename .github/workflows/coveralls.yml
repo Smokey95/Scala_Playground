@@ -2,7 +2,7 @@ name: Scala CI
 
 on:
   push:
-    branches: [ master, develop, TicTacToe_CD ]
+    branches: [ master, develop, TicTacToe_CD, TicTacToe_MVC]
   pull_request:
     branches: [ master ]
 
