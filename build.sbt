@@ -18,6 +18,12 @@ lazy val root = project
       )
     },
     
+    jacocoExcludes := Seq(
+      "Main*",
+      "src.main.scala.Main",
+      "src.main.scala.Utility"
+    ),
+    
     jacocoReportSettings := JacocoReportSettings(
       "Jacoco Coverage Report",
       None,
