@@ -1,20 +1,26 @@
 package TicTacToe
 package aview
 
-import controller.Controller
+import controller.{Controller}
 import model.Stone
 import util.Observer
 import scala.io.StdIn.readLine
 
 class TUI(var controller: Controller) extends Observer:
-  controller.add(this)
+  
+  controller.add(this)                                                          /* Add current instance to controller */
+  println(controller.field.toString())                                          /* Initial Field print (empty) */
+  
+  def this() = 
+    this(new Controller)
   
   def run = {
-    println(controller.field.toString)
     getInputAndPrintLoop()
   }
   
-  override def update = ???
+  override def update: Unit = 
+    println("Field was updated")
+    println(controller.update)
   
   def getInputAndPrintLoop(): Unit =
   {
@@ -27,12 +33,11 @@ class TUI(var controller: Controller) extends Observer:
           case 'X'  => Stone.X
           case 'x'  => Stone.X 
           case 'O'  => Stone.O
-          case '0'  => Stone.O
+          case 'o'  => Stone.O
           case _    => Stone.Empty
         val x = chars(1).toString.toInt
         val y = chars(2).toString.toInt
         controller.put(stone, x, y)
-        println(controller.toString)
         getInputAndPrintLoop()
         
   }

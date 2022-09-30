@@ -12,7 +12,7 @@ case class Field(matrix: Matrix[Stone]):
   private val space = " "
   
   /* Auxiliary constructor */
-  def this(size: Int, filling: Stone) = this(new Matrix(size, filling))
+  def this(size: Int = 3, filling: Stone = Stone.Empty) = this(new Matrix(size, filling))
   
   val size = matrix.size
   
